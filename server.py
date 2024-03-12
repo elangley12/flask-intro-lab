@@ -70,14 +70,14 @@ def say_hello():
       </body>
     </html>
     """
-    
+
 @app.route('/greet')
 def greet_person():
     """Get user by name."""
 
     player = request.args.get("person")
 
-    compliment = choice(AWESOMENESS)
+    compliment = request.args.get("complement")
 
     return f"""
     <!doctype html>
